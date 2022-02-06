@@ -21,5 +21,5 @@ spec:
         name: python-github
         env:
         - name: TEST_GITHUB_TOKEN
-          value: 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
+          value: <MASKED>
       terminationGracePeriodSeconds: 1
