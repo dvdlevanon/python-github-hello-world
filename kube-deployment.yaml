@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: python-github
+  name: python-github
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: python-github
+  template:
+    metadata:
+      labels:
+        name: python-github
+    spec:
+      restartPolicy: Always
+      containers:
+      - image: public.ecr.aws/o3s3b8f6/david-test:latest
+        imagePullPolicy: Always
+        name: python-github
+        env:
+        - name: TEST_GITHUB_TOKEN
+          value: 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
+      terminationGracePeriodSeconds: 1
